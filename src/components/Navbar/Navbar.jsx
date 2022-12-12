@@ -3,6 +3,7 @@ import { SiYourtraveldottv } from "react-icons/si";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 import Logo from "../../assets/img/travellogo.png";
+import {FaUserCircle} from 'react-icons/fa'
 import "./navbar.css";
 const Navbar = () => {
   const [active, setActive] = useState("navBar");
@@ -56,9 +57,14 @@ const Navbar = () => {
                 Contact
               </a>
             </li>
+            
             <button className="btn">
               <a href="">Book now</a>
             </button>
+            <li className="navItem">
+              <a href="" className="navLink"></a>
+              <FaUserCircle className="icon"/>
+            </li>
           </ul>
           <div onClick={removeNav} className="closeNavbar">
             <AiFillCloseCircle className="icon" />

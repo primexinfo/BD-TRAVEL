@@ -1,10 +1,10 @@
 :root {
-  --primaryColor: hsl(199, 100%, 33%);
-  --secondaryColor: hsl(187, 85%, 43%);
+  --primaryColor: hsl(260,65%,44%);
+  --secondaryColor: hsl(226,67%,59%);
   --gradientColor: linear-gradient(
     to right,
-    hsl(187, 85%, 43%),
-    hsl(199, 100%, 33%)
+    hsl(226,67%,59%),
+    hsl(260,65%,44%)
   );
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
@@ -70,6 +70,7 @@
 
         .navItem {
           padding: 0.5rem 0;
+         
           .navLink {
             color: var(--textColor);
             font-size: 0.9rem;
@@ -77,8 +78,16 @@
             &:hover {
               color: var(--primaryColor);
             }
+           
+            }
+           .icon{
+          color: var(--primaryColor);
+          &:hover{
+            color: var(--secondaryColor);
           }
+      }
         }
+        
         .btn {
           margin-top: 1rem;
           a {
@@ -136,6 +145,14 @@
               color: var(--primaryColor);
             }
           }
+          .icon{
+            color: #5620b7;
+            margin-top: 0.3rem;
+            
+            &:hover{
+              color: var(--secondaryColor);
+            }
+        }
         }
       }
     }
@@ -148,6 +165,7 @@
       .navLists{
         .navItem{
           padding: 0 0.7rem;
+          
         }
       }
     }
