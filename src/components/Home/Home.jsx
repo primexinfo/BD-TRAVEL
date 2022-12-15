@@ -10,6 +10,7 @@ import { TbMenu2 } from "react-icons/tb";
 import { TbApps } from "react-icons/tb";
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import Main from "../Main/Main";
 const Home = () => {
 
   useEffect(()=>{
@@ -18,6 +19,7 @@ const Home = () => {
 
 
   return (
+    <>
     <section className="home">
       <div className="overlay">
         <video src={Banner} muted autoPlay loop type="video/mp4"></video>
@@ -33,6 +35,7 @@ const Home = () => {
             <div className="input flex">
               <input type="text" placeholder="Enter name here...." />
               <GrLocation className="icon" />
+              
             </div>
           </div>
           <div className="dateInput">
@@ -68,6 +71,8 @@ const Home = () => {
         </div>
       </div>
     </section>
+    <Main/>
+    </>
   );
 };
 

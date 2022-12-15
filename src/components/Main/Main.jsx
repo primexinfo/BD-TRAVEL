@@ -48,9 +48,10 @@ const Main = () => {
                     </div>
 
                     <div className="desc">
-                      <p>{description}</p>
+                      <Link to="/hotel"><p>{description}</p></Link>
+                      
                     </div>
-                    <Link to="/tour">
+                    <Link to="/hotel">
                       <button className="btn flex">
                         DETAILS <HiOutlineClipboardCheck className="icon" />
                       </button>
