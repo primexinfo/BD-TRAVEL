@@ -1,6 +1,12 @@
 import "./hotel.css";
 import { GrLocation } from "react-icons/gr";
+import { useState } from "react";
+import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons/bs'
+import {AiFillCloseCircle} from 'react-icons/ai'
 const Hotel = () => {
+    const [slideNumber, setSlideNumber]=useState(0)
+    const [open, setOpen]=useState(false)
+    const [close, setClose]=useState(false)
 const imges = [
     {
         src: "https://images.unsplash.com/photo-1643996729194-682a79f4feff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=957&q=80"
@@ -22,14 +28,41 @@ const imges = [
     },
 ]
 
+const handleOpen = (i)=>{
+ setSlideNumber(i)
+ setOpen(true)
+}
+const handleMove = (direction) => {
+    let newSlideNumber;
+
+    if (direction === "l") {
+      newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
+    } else {
+      newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
+    }
+
+    setSlideNumber(newSlideNumber);
+  };
+
   return (
     <div className="hotelContainer">
+        {
+          open && <div className="slider">
+            <AiFillCloseCircle className="close" onClick={()=>setOpen(false)}/>
+            <BsFillArrowLeftCircleFill className="arrow" onClick={()=>handleMove("l")} />
+            <div className="sliderWrapper">
+                <img src={imges[slideNumber].src} alt="" className="sliderImg"  />
+            </div>
+            <BsFillArrowRightCircleFill className="arrow" onClick={()=>handleMove("r")}/>
+          </div>
+        }
+        
       <div className="hotelWrapper">
       <div className="hotelImages">
             {
-                imges.map(img=>(
+                imges.map((img, i)=>(
                     <div className="hotelImageWrapper">
-                        <img src={img.src} alt="" className="hotelImage" />
+                        <img onClick={()=>handleOpen(i)} src={img.src} alt="" className="hotelImage" />
                     </div>
                 ))
             }
