@@ -64,10 +64,12 @@ li {
   outline: none;
   border-radius: 3rem;
   cursor: pointer;
+
 }
 .btn a {
   font-weight: 500;
   color: var(--whiteColor);
+  align-items: center;
 }
 .btn:hover {
   background: var(--secondaryColor);

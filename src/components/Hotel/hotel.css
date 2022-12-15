@@ -97,10 +97,7 @@
     transform: scale(0.9);
   }
 
-  .locationDetails{
 
-  }
-  
   .hotelDetails {
     display: flex;
     justify-content: space-between;
@@ -119,6 +116,7 @@
   .hotelDesc {
     font-size: 14px;
     margin-top: 20px;
+    font-weight: 500;
   }
   
   .hotelDetailsPrice {
